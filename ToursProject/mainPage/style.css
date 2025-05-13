@@ -1,0 +1,167 @@
+.hh:hover{
+    color: darkgoldenrod;
+    font-weight: lighter;
+}
+
+#rev{
+    color: sienna;
+    font-weight: 900;
+}
+#rev:hover{
+    color: orange;
+    font-weight: bold;
+}
+#rbut{
+    background-color: chocolate;
+    color: white;
+}
+#rbut:hover{
+    background-color: white;
+    color: chocolate;
+}
+
+
+
+
+
+.footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 40px;
+    text-align: center;
+    height: 300px;
+}
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+.footer>.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.footer .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.footer .social-icons {
+display: flex;
+justify-content: center;
+gap: 10px;
+margin-top: 15px;
+}
+.footer.social-icons a {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+background-color: transparent;
+border: 2px solid #f39c12;
+color: white;
+font-size: 20px;
+transition: 0.3s;
+text-decoration: none;
+}
+.footer.social-icons a:hover {
+background-color: #f39c12;
+color: black;
+}
+
+
+/*this is styling for overlay*/
+
+.search-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Search overlay (hidden by default) */
+.search-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Search overlay (hidden by default) */
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 1000;
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.search-overlay h1 {
+    font-size: 40px;
+    color: gray;
+}
+
+.search-overlay .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.search-box {
+    width: 50%;
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-btn {
+    padding: 11px 20px;
+    font-size: 18px;
+    margin-left: 10px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.search-btn:hover {
+    background: darkgray;
+}
+
+/* Result Display */
+.result-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.result-card {
+    display: inline-block;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    text-align: left;
+}
+
+.result-card img {
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+}

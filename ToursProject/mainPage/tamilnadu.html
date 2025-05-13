@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAMIL NADU TOUR</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        .hero {
+            position: relative;
+            height: 70vh;
+            background: url('si/tamil1.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .content h1 {
+            font-size: 2rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .content h2 {
+            font-size: 4rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .info {
+            padding: 50px;
+            text-align: left;
+        }
+
+        .sticky {
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .tour-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>It's Time to Explore </h1>
+            <h2><span><b>TAMIL NADU TOUR PACKAGES</b></span></h2>
+        </div>
+    </section>
+
+    <section class="info">
+        <h2>TAMIL NADU TOUR</h2>
+        <p>Culturally and historically affluent Tamil Nadu is undoubtedly the reflection of India's cultural wealth.
+            Occupying the South Eastern belt of the country, the state is a delight for pilgrims and travel enthusiasts
+            alike. The state boasts of temples that date back to almost two millennia and that pretty much explains
+            everything. Cities like Madurai, Kanchipuram, Mahabalipuram and island situated Rameswaram are the usual
+            haunts of the pilgrims. However, it is not only the temples that overwhelm visitors here, making the tip of
+            Indian peninsula; Kanyakumari is also one of the most visited places in Tamil Nadu. The state also flaunts
+            its lush green forests that it borrows from the Western Ghats. Sprawling in a large area; these forests make
+            the home to several wildlife species. Offering respite from the sweltering heat and noise are the hill
+            stations like Ooty and Kodaikanal. Adorned with scenic landscape and salubrious climate, these hill stations
+            are ideal for holiday in Tamil Nadu.</p>
+    </section>
+    <section class="container mt-5">
+        <h2 class="mb-4">TAMIL NADU TOUR PACKAGES</h2>
+        <div class="row">
+            <div class="col-md-2 tour-card">
+                <img src="si/tamil2.jpg" class="img-fluid rounded" alt="Classical tamil nadu tour" height="250px">
+                <p><b>CLASSICAL TAMIL NADU TOUR</b><br>05 Nights & 06 Days</p>
+            </div>
+            <div class="col-md-2 tour-card">
+                <img src="si/tamil3.jpg" class="img-fluid rounded" alt="ooty and kodaikanal Trip" height="250px">
+                <p><b>OOTY AND KODAIKANAL TRIP</b><br>11 Nights & 12 Days</p>
+            </div>
+            <div class="col-md-2 tour-card">
+                <img src="si/tamil4.jpg" class="img-fluid rounded" alt="Spiritual Tamil nadu TOUR" height="250px">
+                <p><b>SPIRITUAL TAMIL NADU TOUR</b><br>06 Nights & 07 Days</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        window.addEventListener("scroll", function () {
+            document.querySelector("nav").classList.toggle("sticky", window.scrollY > 50);
+        });
+    </script>
+    <div class="button" style="margin-left: 100px;">
+        <a href="index.html"><input type="button" value="Home"></a>
+        </div>
+</body>
+
+</html>
+

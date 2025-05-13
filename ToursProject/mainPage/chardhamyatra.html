@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHARDHAM YATRA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        .hero {
+            position: relative;
+            height: 70vh;
+            background: url('si/chardam1.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .content h1 {
+            font-size: 2rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .content h2 {
+            font-size: 4rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .info {
+            padding: 50px;
+            text-align: left;
+        }
+
+        .sticky {
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .tour-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>It's Time to Explore </h1>
+            <h2><span><b>Chardham Yatra in Uttarakhand</b></span></h2>
+        </div>
+    </section>
+
+    <section class="info">
+        <h2>The Getaway To Meet Omnipresent, Omnipotent And The Omniscient</h2>
+        <p>Badrinath, Kedarnath, Gangotri & Yamunotri pilgrimage in Uttarakhand is a journey for the upliftment of soul
+            and innermost self. Located in the Garhwal Himalaya ranges in Uttarakhand, these are the four most sacred
+            Hindu shrines that draw devotees from India and around the world. The purpose of this sacred journey is to
+            attain salvation, or moksha, the ultimate state of liberation in Hinduism. The 4 Dham temples hold immense
+            significance in Hindu mythology. 4 Dham Yatra is a pious pilgrimage tour to sacred Badrinath (abode of Lord
+            Vishnu), Kedarnath (abode of Lord Shiva), Gangotri (abode of goddess Ganga) and Yamunotri (abode of goddess
+            Yamuna) Shrines. There is another Char Dham, which consists of four holy sites scattered all over India.
+            Established by Adi Shankaracharya, these are Badrinath in Uttarakhand, Dwarka in Gujarat, Puri in Odisha and
+            Rameswaram in Tamil Nadu.</h2>
+    </section>
+    <section class="container mt-5">
+        <h2 class="mb-4">Char Dham Yatra Tour Packages 2025</h2>
+        <div class="row">
+            <div class="col-md-2 tour-card">
+                <img src="si/chardam2.jpg" class="img-fluid rounded" alt="Chardham Piligrimage Tour" height="250px">
+                <p><b>CHARDHAM PRILIGRIMAGE TOUR</b><br>11 Nights & 12 Days</p>
+            </div>
+            <div class="col-md-2 tour-card">
+                <img src="si/chardam3.jpg" class="img-fluid rounded" alt="Kedarnath And Badrinath Tour" height="250px">
+                <p><b>KEDARNATH AND BADRINATH PACKAGE</b><br>07 Nights & 08 Days</p>
+            </div>
+            <div class="col-md-2 tour-card">
+                <img src="si/chardam4.jpg" class="img-fluid rounded" alt="YAMUNOTRI AND GANGOTRI TOUR" height="250px">
+                <p><b>YAMUNOTRI AND GANGOTRI PACKAGE</b><br>06 Nights & 07 Days</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        window.addEventListener("scroll", function () {
+            document.querySelector("nav").classList.toggle("sticky", window.scrollY > 50);
+        });
+    </script>
+    <div class="button" style="margin-left: 100px;">
+        <a href="index.html"><input type="button" value="Home"></a>
+        </div>
+</body>
+
+</html>
+

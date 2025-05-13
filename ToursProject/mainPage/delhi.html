@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delhi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            overflow-x: hidden;
+        }
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            z-index: 1000;
+            transition: 0.3s;
+        }
+        .hero {
+            position: relative;
+            height: 70vh;
+            background: url('si/delhi1.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+        .content h1 {
+            font-size: 2rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+        .content h2 {
+            font-size: 4rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+        .info {
+            padding: 50px;
+            text-align: left;
+        }
+        .sticky {
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .tour-card img {
+        width: 100%;
+        height: 250px; 
+        object-fit: cover; 
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>It's Time to Plan Your </h1>
+            <h2><span><b>Delhi’s Tour</b></span></h2>
+        </div>
+    </section>
+    
+    <section class="info">
+        <h2>India's Delhi Tour Packages</h2>
+        <p>Delhi, India’s capital, is a city of contrasts where history and modernity coexist. 
+            With its grand Mughal-era monuments, colonial-era buildings, and contemporary skyscrapers, 
+            Delhi showcases a rich blend of cultures and traditions. The city’s vibrant streets are filled with historic 
+            sites like Jama Masjid, Red Fort, Humayun’s Tomb, and Qutub Minar, while modern landmarks like India Gate and 
+            Lotus Temple add to its charm.Shopping in Delhi is an experience in itself, from bustling markets like Chandni 
+            Chowk and Karol Bagh to upscale shopping destinations in Connaught Place and Select Citywalk. The city is also a 
+            paradise for food lovers, offering everything from street food delicacies to world-class fine dining. 
+            The cultural scene is just as dynamic, with music festivals, theatre performances, and traditional dance 
+            shows happening throughout the year.Whether you’re exploring ancient ruins, indulging in delicious cuisine, 
+            or enjoying the city’s vibrant nightlife, Delhi offers an unforgettable experience. With our curated Delhi 
+            tour packages, we ensure hassle-free travel, comfortable stays, and personalized itineraries to make your visit truly special.</p>
+    </section>
+    <section class="container mt-5">
+        <h2 class="mb-4">Best Selling Delhi Packages</h2>
+        <div class="row">
+            <div class="col-md-2 tour-card">
+                <img src="si/delhi2.jpg" class="img-fluid rounded" alt="Wildlife Tour 1" height="250px">
+                <p><b>Taj Mahal</b><br></p>
+            </div>
+            <div class="col-md-2 tour-card">
+                <img src="si/delhi3.jpg" class="img-fluid rounded" alt="Wildlife Tour 2" height="250px">
+                <p><b>Qutib Minar</b><br></p>
+            </div>
+            <div class="col-md-2 tour-card">
+                <img src="si/delhi4.jpg" class="img-fluid rounded" alt="Wildlife Tour 3" height="250px">
+                <p><b>Gate way of India</b></p>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        window.addEventListener("scroll", function() {
+            document.querySelector("nav").classList.toggle("sticky", window.scrollY > 50);
+        });
+    </script>
+    <div class="button" style="margin-left: 100px;">
+        <a href="index.html"><input type="button" value="Home"></a>
+        </div>
+</body>
+</html>
+

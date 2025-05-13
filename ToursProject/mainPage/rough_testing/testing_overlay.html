@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Search Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Navigation bar */
+        .navbar {
+            background: black;
+            padding: 15px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .search-icon {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Search overlay (hidden by default) */
+        .search-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 1000;
+            transform: translateY(-100%);
+            transition: transform 0.4s ease-in-out;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .search-overlay h1 {
+            font-size: 40px;
+            color: gray;
+        }
+
+        .search-overlay .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .search-box {
+            width: 50%;
+            padding: 10px;
+            font-size: 18px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <h2>Incredible India</h2>
+        <span class="search-icon" onclick="openSearch()">🔍</span>
+    </div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <span class="close-btn" onclick="closeSearch()">✖</span>
+        <h1>Enter a search term</h1>
+        <input type="text" class="search-box" placeholder="Search here...">
+    </div>
+
+    <script>
+        function openSearch() {
+            document.getElementById("searchOverlay").style.transform = "translateY(0)";
+        }
+
+        function closeSearch() {
+            document.getElementById("searchOverlay").style.transform = "translateY(-100%)";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .review-container {
+            background: #ffffff;
+            padding: 30px;
+            width: 100%;
+            max-width: 700px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        label {
+            font-size: 16px;
+            color: #555;
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            max-width: 200px;
+            margin-top: 15px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .reviews {
+            margin-top: 30px;
+            width: 100%;
+        }
+        .review-card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+            text-align: left;
+            font-size: 16px;
+            color: #333;
+        }
+        .review-card p {
+            margin: 0;
+        }
+        .review-card .review-author {
+            font-size: 14px;
+            color: #777;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="review-container">
+        <h2>Leave a Review</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <textarea id="reviewInput" placeholder="Write your review here..."></textarea>
+        <button onclick="addReview()">Submit Review</button>
+        <a href="index.html"><button>HomePage</button></a>
+    </div>
+
+    <div class="reviews" id="reviewList">
+        <h3>User Reviews</h3>
+    </div>
+
+    <script>
+        function addReview() {
+            let reviewText = document.getElementById("reviewInput").value;
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+
+            if (reviewText.trim() === "" || name.trim() === "" || email.trim() === "") {
+                alert("Please fill out all fields before submitting!");
+                return;
+            }
+
+
+
+            fetch('http://localhost:3003/submit-review', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                reviewText: reviewText,
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message || "Review submitted!")});
+
+
+
+
+
+            let reviewCard = document.createElement("div");
+            reviewCard.classList.add("review-card");
+
+            reviewCard.innerHTML = `
+                <p>${reviewText}</p>
+                <p class="review-author">- ${name} (${email})</p>
+            `;
+
+            document.getElementById("reviewList").appendChild(reviewCard);
+
+            // Clear input fields after submission
+            document.getElementById("reviewInput").value = "";
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+        }
+    </script>
+
+</body>
+</html>

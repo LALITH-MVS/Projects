@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Destinations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        h1:hover{
+            color: darkblue;
+            font-weight: bolder;
+        }
+        h2 {
+            font-size: 1.5em;
+            margin-top: 30px;
+            text-align: left;
+            padding-left: 20px;
+        }
+        h2:hover{
+            color: coral;
+            font-weight: lighter;
+        }
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            padding: 20px;
+        }
+        .destination-grid a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            position: relative;
+            display: block;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .destination-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .destination-grid a:hover img {
+            transform: scale(1.05);
+        }
+        .destination-name {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Explore Top Destinations by Region</h1>
+
+    <h2>North India</h2>
+    <div class="destination-grid">
+        <a href="#">
+            <img src="himachal.jpg" alt="Himachal Pradesh">
+            <div class="destination-name">Himachal Pradesh</div>
+        </a>
+        <a href="#">
+            <img src="jammu.jpg" alt="Jammu & Kashmir">
+            <div class="destination-name">Jammu & Kashmir</div>
+        </a>
+        <a href="#">
+            <img src="delhi.jpg" alt="Delhi">
+            <div class="destination-name">Delhi</div>
+        </a>
+        <a href="#">
+            <img src="rajasthan.jpg" alt="Rajasthan">
+            <div class="destination-name">Rajasthan</div>
+        </a>
+    </div>
+
+    <h2>South India</h2>
+    <div class="destination-grid">
+        <a href="#">
+            <img src="kerala.jpg" alt="Kerala">
+            <div class="destination-name">Kerala</div>
+        </a>
+        <a href="#">
+            <img src="tamilnadu.jpg" alt="Tamil Nadu">
+            <div class="destination-name">Tamil Nadu</div>
+        </a>
+        <a href="#">
+            <img src="karnataka.jpg" alt="Karnataka">
+            <div class="destination-name">Karnataka</div>
+        </a>
+        <a href="#">
+            <img src="andhra.jpg" alt="Andhra Pradesh">
+            <div class="destination-name">Andhra Pradesh</div>
+        </a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajasthan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            overflow-x: hidden;
+        }
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            z-index: 1000;
+            transition: 0.3s;
+        }
+        .hero {
+            position: relative;
+            height: 70vh;
+            background: url('si/raj1.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+        .content h1 {
+            font-size: 2rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+        .content h2 {
+            font-size: 4rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+        .info {
+            padding: 50px;
+            text-align: left;
+        }
+        .sticky {
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .tour-card img {
+        width: 100%;
+        height: 250px; 
+        object-fit: cover; 
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>It's Time to Plan Your </h1>
+            <h2><span><b>Rajasthan Tour</b></span></h2>
+        </div>
+    </section>
+    
+    <section class="info">
+        <h2>India's Rajasthan Tour Packages</h2>
+        <p>Discover the incredible beauty of the land of the royals as we take you to explore Rajasthan's most glorious palaces and forts. 
+            With our Rajasthan tour packages, you will find yourself immersed in the charm and grandeur of the state.Our Rajasthan tour 
+            packages make sure that you have the most seamless travel experience while you get the best of this colorful and vibrant destination. 
+            Choose from our tour packages and cater them according to your specific requirements, all at the best prices. Spending your holidays 
+            in Rajasthan with us will provide you with an opportunity to explore the state's regal and enchanting architecture, vibrant culture, 
+            and rich wildlife, all wrapped up in a blanket of warm hospitality.Tour My India's exclusively designed holiday packages cover the major 
+            heritage attractions from the popular tourist destinations of Rajasthan, such as Jaipur, Udaipur, Jaisalmer, Bikaner, among many others. 
+            Avail the best prices on Rajasthan tour packages 2024/2025 for a family vacation, honeymoon tours, and weekend tour packages by booking 
+            Tour My India for your next vacation and discover the beauty of the state like never before!</p>
+    </section>
+    <section class="container mt-5">
+        <h2 class="mb-4">Best Selling Rajasthan Packages</h2>
+        <div class="row">
+            <div class="col-md-2 tour-card">
+                <img src="si/raj2.jpg" class="img-fluid rounded" alt="Wildlife Tour 1" height="250px">
+                <p><b>Forts and Palaces</b><br>3 Nights and 4 Days</p>
+            </div>
+            <div class="col-md-2 tour-card">
+                <img src="si/raj3.jpg" class="img-fluid rounded" alt="Wildlife Tour 2" height="250px">
+                <p><b>Classical Tour</b><br>4 Nights and 5 Days</p>
+            </div>
+            <div class="col-md-2 tour-card">
+                <img src="si/raj4.jpg".jpg" class="img-fluid rounded" alt="Wildlife Tour 3" height="250px">
+                <p><b>Best of Rajasthan</b><br>10 Nights and 11 Days</p>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        window.addEventListener("scroll", function() {
+            document.querySelector("nav").classList.toggle("sticky", window.scrollY > 50);
+        });
+    </script>
+    <div class="button" style="margin-left: 100px;">
+        <a href="index.html"><input type="button" value="Home"></a>
+        </div>
+</body>
+</html>

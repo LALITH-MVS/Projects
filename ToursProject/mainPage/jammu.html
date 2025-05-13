@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jammu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            overflow-x: hidden;
+        }
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            z-index: 1000;
+            transition: 0.3s;
+        }
+        .hero {
+            position: relative;
+            height: 70vh;
+            background: url('si/jammu1.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+        .content h1 {
+            font-size: 2rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+        .content h2 {
+            font-size: 4rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+        .info {
+            padding: 50px;
+            text-align: left;
+        }
+        .sticky {
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .tour-card img {
+        width: 100%;
+        height: 250px; 
+        object-fit: cover; 
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>It's Time to Plan Your </h1>
+            <h2><span><b>Jammu And Kashmir Tour</b></span></h2>
+        </div>
+    </section>
+    
+    <section class="info">
+        <h2>India's Jammu Tour Packages</h2>
+        <p>Planning a Jammu and Kashmir trip in 2025? Tour My India offers expertly crafted Jammu and Kashmir tour packages 
+        that are fully customizable to ensure a personalized experience tailored to your preferences.Jammu and Kashmir is a 
+        dream destination where travelers can immerse themselves in the breathtaking beauty of lush valleys, snow-capped mountains, 
+        sprawling meadows, and serene lakes. With our diverse range of tour packages, Tour My India turns every travel dream into reality.
+        Whether you're seeking a romantic honeymoon tour, an adventure-filled getaway, a short or long vacation, a family-friendly tour, 
+        a thrilling trekking expedition, or a spiritual pilgrimage to Vaishno Devi and Amarnath, we have the perfect package for you. 
+        For a truly unique experience, our houseboat stay packages offer a glimpse into the timeless charm of Srinagar’s Dal Lake.Solo travelers, 
+        groups, and families can enjoy a seamless, stress-free journey with our customizable options. Our expert team ensures top-notch accommodations, 
+        comfortable transportation, and curated activities, making your Jammu and Kashmir trip truly unforgettable.Additionally, we offer all-inclusive 
+        Kashmir tour packages from Bangalore, Delhi, Mumbai, and other major cities across India, providing the perfect blend of affordability and sightseeing. 
+        Let Tour My India create an exceptional travel experience for you in Paradise on Earth!</p>
+    </section>
+    <section class="container mt-5">
+        <h2 class="mb-4">Best Selling Jammu Packages</h2>
+        <div class="row">
+            <div class="col-md-2 tour-card">
+                <img src="si/jammu2.jpg" class="img-fluid rounded" alt="Wildlife Tour 1" height="250px">
+                <p><b>Magical Kashmir</b><br>2 Nights & 3 Days</p>
+            </div>
+            <div class="col-md-2 tour-card">
+                <img src="si/jammu3.jpg" class="img-fluid rounded" alt="Wildlife Tour 2" height="250px">
+                <p><b>Amarnath Darshan</b><br>3 Nights & 4 Days</p>
+            </div>
+            <div class="col-md-2 tour-card">
+                <img src="si/jammu4.jpg" class="img-fluid rounded" alt="Wildlife Tour 3" height="250px">
+                <p><b>Splendor of Kashmir</b>2 Nights & 3 Days</p>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        window.addEventListener("scroll", function() {
+            document.querySelector("nav").classList.toggle("sticky", window.scrollY > 50);
+        });
+    </script>
+    <div class="button" style="margin-left: 100px;">
+        <a href="index.html"><input type="button" value="Home"></a>
+        </div>
+</body>
+</html>
+

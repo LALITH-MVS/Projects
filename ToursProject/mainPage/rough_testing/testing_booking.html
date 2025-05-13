@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Quote</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-top: 15px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="quoteForm">
+            <h2>Request a Quote</h2>
+            
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+            
+            <label for="country">Country:</label>
+            <select id="country" name="country" required>
+                <option value="">Select Country</option>
+                <option value="USA">USA</option>
+                <option value="India">India</option>
+                <option value="UK">UK</option>
+            </select>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="tourDescription">Tour Description:</label>
+            <textarea id="tourDescription" name="tourDescription" required></textarea>
+            
+            <label for="travelDate">Travel Date:</label>
+            <input type="date" id="travelDate" name="travelDate" required>
+            
+            <label for="duration">Duration of Stay:</label>
+            <input type="text" id="duration" name="duration" required>
+            
+            <label for="numPersons">Number of Persons:</label>
+            <input type="text" id="numPersons" name="numPersons" required>
+            
+            <label for="contactNo">Contact Number:</label>
+            <input type="text" id="contactNo" name="contactNo" required>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById("quoteForm").addEventListener("submit", function(event) {
+            let fullName = document.getElementById("fullName").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let country = document.getElementById("country").value;
+            let tourDescription = document.getElementById("tourDescription").value.trim();
+            let travelDate = document.getElementById("travelDate").value;
+            let duration = document.getElementById("duration").value.trim();
+            let numPersons = document.getElementById("numPersons").value.trim();
+            let contactNo = document.getElementById("contactNo").value.trim();
+            
+            let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            let phoneRegex = /^[0-9]{10}$/;
+            let nameRegex = /^[A-Za-z ]{1,50}$/;
+            let numRegex = /^[0-9]+$/;
+            
+            if (!nameRegex.test(fullName)) {
+                alert("Invalid name. Only alphabets allowed and max 50 characters.");
+                event.preventDefault();
+                return;
+            }
+            if (!emailRegex.test(email)) {
+                alert("Invalid email format.");
+                event.preventDefault();
+                return;
+            }
+            if (country === "") {
+                alert("Please select a country.");
+                event.preventDefault();
+                return;
+            }
+            if (tourDescription === "") {
+                alert("Tour description cannot be empty.");
+                event.preventDefault();
+                return;
+            }
+            if (travelDate === "") {
+                alert("Please select a travel date.");
+                event.preventDefault();
+                return;
+            }
+            if (duration === "" || !numRegex.test(duration)) {
+                alert("Please enter a valid duration of stay.");
+                event.preventDefault();
+                return;
+            }
+            if (numPersons === "" || !numRegex.test(numPersons)) {
+                alert("Please enter a valid number of persons.");
+                event.preventDefault();
+                return;
+            }
+            if (!phoneRegex.test(contactNo)) {
+                alert("Invalid contact number. Must be exactly 10 digits.");
+                event.preventDefault();
+                return;
+            }
+        });
+    </script>
+</body>
+</html>

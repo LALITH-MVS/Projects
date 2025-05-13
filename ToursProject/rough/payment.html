@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f6f6f6;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      display: flex;
+      max-width: 1000px;
+      width: 100%;
+      gap: 30px;
+    }
+
+    .left-form, .right-summary {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .left-form {
+      flex: 2;
+    }
+
+    .right-summary {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      background-color: #fafafa;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    input[type="text"], input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 12px 20px;
+      background-color: #ff9900;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #e68a00;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Left Form -->
+    <div class="left-form">
+      <h2>Payment Details</h2>
+      <form id="paymentForm">
+        <label>Destination:</label>
+        <input type="text" name="destination" placeholder="Enter destination" required>
+
+        <label>No. of People:</label>
+        <input type="number" name="peopleCount" placeholder="Enter number of people" required>
+        
+        <label>Amount per Person:</label>
+        <input type="number" name="amountPerPerson" placeholder="Enter amount per person" required>
+
+        <label>Location:</label>
+        <input type="text" name="location" placeholder="Enter your location" required>
+
+        <button type="submit">Calculate Summary</button>
+      </form>
+    </div>
+
+    <!-- Right Summary -->
+    <div class="right-summary">
+      <div class="card" id="destCard"><strong>Destination:</strong> --</div>
+      <div class="card" id="peopleCard"><strong>No. of People:</strong> --</div>
+      <div class="card" id="totalAmtCard"><strong>Total Payment:</strong> ₹--</div>
+      <div class="card" id="locationCard"><strong>Location:</strong> --</div>
+    </div>
+
+  </div>
+
+  <script>
+    const form = document.getElementById('paymentForm');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const destination = form.destination.value;
+      const peopleCount = parseInt(form.peopleCount.value);
+      const amountPerPerson = parseFloat(form.amountPerPerson.value);
+      const location = form.location.value;
+
+      const total = peopleCount * amountPerPerson;
+
+      document.getElementById('destCard').innerHTML = `<strong>Destination:</strong> ${destination}`;
+      document.getElementById('peopleCard').innerHTML = `<strong>No. of People:</strong> ${peopleCount}`;
+      document.getElementById('totalAmtCard').innerHTML = `<strong>Total Payment:</strong> ₹${total.toFixed(2)}`;
+      document.getElementById('locationCard').innerHTML = `<strong>Location:</strong> ${location}`;
+    });
+  </script>
+
+</body>
+</html>

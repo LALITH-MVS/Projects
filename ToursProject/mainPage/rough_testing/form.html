@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Request a Quote</title>
+  <link rel="stylesheet" href="st">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('rashid-f-6IMWJEzRU-unsplash.jpg') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2; /* 👈 Lower this value to reduce opacity */
+  z-index: -1;  /* Keep it behind the content */
+}
+    .container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 400px;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px;
+      margin-top: 15px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+
+    /* Overlay Styles */
+    #successModal {
+  display: none;  /* this hides the modal initially */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="overlay">
+            <div class="container">
+                <form id="quoteForm">
+                  <h2>Request a Quote</h2>
+                  
+                  <label for="fullName">Full Name:</label>
+                  <input type="text" id="fullName" name="fullName" required>
+                  
+                  <label for="country">Country:</label>
+                  <select id="country" name="country" required>
+                    <option value="">Select Country</option>
+                    <option value="USA">USA</option>
+                    <option value="India">India</option>
+                    <option value="UK">UK</option>
+                  </select>
+                  
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" required>
+                  
+                  <label for="tourDescription">Tour Destination:</label>
+                  <input type="text" id="tourDescription" name="tourDescription" required>
+                  
+                  <label for="travelDate">Travel Date:</label>
+                  <input type="date" id="travelDate" name="travelDate" required>
+                  
+                  <label for="duration">Duration of Stay:</label>
+                  <input type="number" id="duration" name="duration" required>
+                  
+                  <label for="numPersons">Number of Persons:</label>
+                  <input type="number" id="numPersons" name="numPersons" required>
+                  
+                  <label for="contactNo">Contact Number:</label>
+                  <input type="number" id="contactNo" name="contactNo" required>
+                  
+                  <button type="submit">Submit</button>
+                </form>
+              </div>
+            
+              <!-- Success Modal -->
+              <div id="successModal">
+                <div class="modal-content">
+                  <h2>Booking Confirmed!</h2>
+                  <p>Your booking has been successfully saved to the database.</p>
+                  <button onclick="closeModal()">Continue</button>
+                </div>
+              </div>
+            
+        </div>
+    </div>
+  
+  <script>
+    document.getElementById("quoteForm").addEventListener("submit", async function(event) {
+      event.preventDefault();
+
+      // Validation
+      const fullName = document.getElementById("fullName").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const country = document.getElementById("country").value;
+      const tourDescription = document.getElementById("tourDescription").value.trim();
+      const travelDate = document.getElementById("travelDate").value;
+      const duration = document.getElementById("duration").value.trim();
+      const numPersons = document.getElementById("numPersons").value.trim();
+      const contactNo = document.getElementById("contactNo").value.trim();
+
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      const phoneRegex = /^[0-9]{10}$/;
+      const nameRegex = /^[A-Za-z ]{1,50}$/;
+      const numRegex = /^[0-9]+$/;
+
+      if (!nameRegex.test(fullName)) return alert("Invalid name. Only alphabets allowed and max 50 characters.");
+      if (!emailRegex.test(email)) return alert("Invalid email format.");
+      if (country === "") return alert("Please select a country.");
+      if (tourDescription === "") return alert("Tour description cannot be empty.");
+      if (travelDate === "") return alert("Please select a travel date.");
+      if (duration === "" || !numRegex.test(duration)) return alert("Invalid duration of stay.");
+      if (numPersons === "" || !numRegex.test(numPersons)) return alert("Invalid number of persons.");
+      if (!phoneRegex.test(contactNo)) return alert("Invalid contact number. Must be exactly 10 digits.");
+
+      // Prepare data
+      const data = {
+        fullName,
+        country,
+        email,
+        tourDescription,
+        travelDate,
+        duration,
+        numPersons,
+        contactNo
+      };
+
+      // Submit using fetch
+      try {
+        const response = await fetch("/bookingPage", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+  document.getElementById("successModal").style.display = "flex";
+}
+ else {
+          alert("Submission failed. Try again.");
+        }
+      } catch (err) {
+        alert("Error submitting form.");
+        console.error(err);
+      }
+    });
+
+    function closeModal() {
+      document.getElementById("successModal").style.display = "none";
+      window.location.href = "/"; // Change to home or another page if needed
+    }
+  </script>
+</body>
+</html>

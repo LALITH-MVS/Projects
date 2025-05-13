@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>himachal pradesh</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            overflow-x: hidden;
+        }
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            z-index: 1000;
+            transition: 0.3s;
+        }
+        .hero {
+            position: relative;
+            height: 70vh;
+            background: url('si/hima1.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+        .content h1 {
+            font-size: 2rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+        .content h2 {
+            font-size: 4rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+        .info {
+            padding: 50px;
+            text-align: left;
+        }
+        .sticky {
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .tour-card img {
+        width: 100%;
+        height: 250px; 
+        object-fit: cover; 
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>It's Time to Plan Your </h1>
+            <h2><span><b>Himachal Tour</b></span></h2>
+        </div>
+    </section>
+    
+    <section class="info">
+        <h2>India's Himachal Tour Packages</h2>
+        <p>Looking for Himachal Pradesh tour packages? At Tour My India, we offer fully customizable tour packages that ensure you
+            enjoy the holiday of your dreams. Discover the magic of Himachal Pradesh with Tour My India.</p>
+        <p>From breathtaking valleys and snow-capped peaks to serene lakes and meadows, we offer a variety of Himachal Pradesh 
+            tourism packages to make your dream trip a reality. Whether you're seeking a romantic honeymoon, an adventurous trek, 
+            or a spiritual journey to sacred sites like Manali and Dharamshala, we have the best Himachal holidaypackages which will cater your every need.</p>
+        <p> Tour My India's experienced team curates exclusive personalized unforgettable Himachal Pradesh holidays for solo travelers, groups, and families. 
+            With customizable options, we take care of everything - accommodations, transportation, and activities, so you can relax and enjoy a stress-free 
+            Himachal Pradesh trip.Plan your dream holiday in Himachal with us and embark on the handcrafted Kullu Manali tour and Shimla Manali Dharamshala tour. 
+            Explore top attractions, indulge in a variety of activities, and enjoy stays at the best hotels and resorts for an unforgettable experience. 
+            Tour My India offers premium end-to-end services and also offers the best Shimla, Kullu, Manali & Dalhousie Tour by AC luxury Volvo bus, 
+            ensuring a hassle-free travel experience. Book with us and explore the best of Himachal in comfort and style!</p>
+    </section>
+    <section class="container mt-5">
+        <h2 class="mb-4">Best Selling Himachal Packages</h2>
+        <div class="row">
+            <div class="col-md-2 tour-card">
+                <img src="si/hima2.jpg" class="img-fluid rounded" alt="Wildlife Tour 1" height="250px">
+                <p><b>kulumanali Tour</b><br>2 Nights & 3 Days</p>
+            </div>
+            <div class="col-md-2 tour-card">
+                <img src="si/hima3.jpg" class="img-fluid rounded" alt="Wildlife Tour 2" height="250px">
+                <p><b>shimla sightseeing Tour</b><br>3 Nights & 4 Days</p>
+            </div>
+            <div class="col-md-2 tour-card">
+                <img src="si/hima4.jpg" class="img-fluid rounded" alt="Wildlife Tour 3" height="250px">
+                <p><b>best of himachal Tour</b><br>2 Nights & 3 Days</p>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        window.addEventListener("scroll", function() {
+            document.querySelector("nav").classList.toggle("sticky", window.scrollY > 50);
+        });
+    </script>
+    <div class="button" style="margin-left: 100px;">
+        <a href="index.html"><input type="button" value="Home"></a>
+        </div>
+</body>
+</html>
+

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en"  ng-app="tourApp">
+<head>
+  <meta charset="UTF-8" />
+  <title>Payment</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 30px;
+      padding: 30px;
+    }
+    .form-container {
+      width: 50%;
+    }
+    .card {
+      width: 40%;
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .passenger-group {
+      display: flex;
+      gap: 10px;
+    }
+    button {
+      padding: 10px;
+      background-color: green;
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: darkgreen;
+    }
+  </style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+</head>
+<body ng-controller="DateController">
+
+
+  <div class="form-container">
+    <h2>Payment Details</h2>
+    <p class="current-date">{{ today | date:'fullDate' }}</p>
+    <form id="paymentForm">
+      <label for="pickupLocation">Pickup Location:</label>
+      <input type="text" id="pickupLocation" name="pickupLocation" required />
+
+      <label for="mobile">Mobile Number:</label>
+      <input type="text" id="mobile" name="mobile" required />
+
+      <div id="passengerDetails"></div>
+
+      <label for="cardNumber">Card Number:</label>
+      <input type="text" id="cardNumber" name="cardNumber" required />
+
+      <button type="submit">Pay and Confirm</button>
+    </form>
+  </div>
+
+  <div class="card" id="tripSummary">
+    <h3>Trip Summary</h3>
+    <p><strong>Destination:</strong> <span id="destination"></span></p>
+    <p><strong>No. of People:</strong> <span id="people"></span></p>
+    <p><strong>No. of Days:</strong> <span id="days"></span></p>
+    <p><strong>Total Price:</strong> ₹<span id="price"></span></p>
+  </div>
+   <button><a href="index.html">Home</a></button>
+  <script>
+   
+    // Initialize AngularJS app
+    var app = angular.module('tourApp', []);
+    app.controller('DateController', function($scope) {
+      $scope.today = new Date();
+    });
+
+    const trip = JSON.parse(localStorage.getItem("tripDetails"));
+    if (!trip) {
+      alert("No booking info found. Redirecting...");
+      window.location.href = "/mainPage/index.html";
+    }
+
+    trip.totalPrice = trip.numPersons * trip.duration * 1000;
+
+document.getElementById("destination").textContent = trip.tourDescription;
+document.getElementById("people").textContent = trip.numPersons;
+document.getElementById("days").textContent = trip.duration;
+document.getElementById("price").textContent = trip.totalPrice;
+
+
+    const passengerDetailsDiv = document.getElementById("passengerDetails");
+
+    for (let i = 0; i < trip.numPersons; i++) {
+      passengerDetailsDiv.innerHTML += `
+        <div class="passenger-group">
+          <input type="text" name="passengerName${i}" placeholder="Name of Passenger ${i+1}" required />
+          <input type="number" name="passengerAge${i}" placeholder="Age" required />
+        </div>`;
+    }
+
+    document.getElementById("paymentForm").addEventListener("submit", async function(event) {
+      event.preventDefault();
+
+      const formData = new FormData(event.target);
+      const passengers = [];
+
+      for (let i = 0; i < trip.numPersons; i++) {
+        passengers.push({
+          name: formData.get(`passengerName${i}`),
+          age: formData.get(`passengerAge${i}`)
+        });
+      }
+
+      const finalData = {
+  pickupLocation: formData.get("pickupLocation"),
+  mobile: formData.get("mobile"),
+  cardNumber: formData.get("cardNumber"),
+  destination: trip.tourDescription,
+  days: trip.duration,
+  numPeople: trip.numPersons,
+  totalPrice: trip.totalPrice,  // already updated above
+  passengers
+};
+
+
+      try {
+        const res = await fetch("/confirmBooking", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(finalData)
+        });
+
+        if (res.ok) {
+          alert("🎉 Your tour has been successfully confirmed!");
+          localStorage.removeItem("tripDetails");
+          window.location.href = "/mainPage/index.html";
+        } else {
+          alert("Failed to confirm booking.");
+        }
+      } catch (err) {
+        alert("Error occurred. Try again.");
+      }
+    });
+  </script>
+
+
+</script>
+</body>
+</html>

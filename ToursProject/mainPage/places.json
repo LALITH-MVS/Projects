@@ -1,0 +1,124 @@
+[
+    {
+        "name": "Taj Mahal",
+        "state": "Uttar Pradesh",
+        "city": "Agra",
+        "latitude": 27.1751,
+        "longitude": 78.0421,
+        "image": "https://source.unsplash.com/600x400/?tajmahal",
+        "package": {
+            "days": 3,
+            "cost": 12000
+        }
+    },
+    {
+        "name": "Gateway of India",
+        "state": "Maharashtra",
+        "city": "Mumbai",
+        "latitude": 18.9220,
+        "longitude": 72.8347,
+        "image": "https://source.unsplash.com/600x400/?gatewayofindia",
+        "package": {
+            "days": 4,
+            "cost": 15000
+        }
+    },
+    {
+        "name": "Red Fort",
+        "state": "Delhi",
+        "city": "Delhi",
+        "latitude": 28.6562,
+        "longitude": 77.2410,
+        "image": "https://source.unsplash.com/600x400/?redfort",
+        "package": {
+            "days": 2,
+            "cost": 8000
+        }
+    },
+    {
+        "name": "India Gate",
+        "state": "Delhi",
+        "city": "Delhi",
+        "latitude": 28.6129,
+        "longitude": 77.2295,
+        "image": "https://source.unsplash.com/600x400/?indiagate",
+        "package": {
+            "days": 2,
+            "cost": 7000
+        }
+    },
+    {
+        "name": "Mysore Palace",
+        "state": "Karnataka",
+        "city": "Mysore",
+        "latitude": 12.3052,
+        "longitude": 76.6551,
+        "image": "https://source.unsplash.com/600x400/?mysorepalace",
+        "package": {
+            "days": 3,
+            "cost": 11000
+        }
+    },
+    {
+        "name": "Hawa Mahal",
+        "state": "Rajasthan",
+        "city": "Jaipur",
+        "latitude": 26.9239,
+        "longitude": 75.8267,
+        "image": "https://source.unsplash.com/600x400/?hawamahal",
+        "package": {
+            "days": 3,
+            "cost": 12000
+        }
+    },
+    {
+        "name": "Qutub Minar",
+        "state": "Delhi",
+        "city": "Delhi",
+        "latitude": 28.5245,
+        "longitude": 77.1855,
+        "image": "https://source.unsplash.com/600x400/?qutubminar",
+        "package": {
+            "days": 2,
+            "cost": 8500
+        }
+    },
+    {
+        "name": "Charminar",
+        "state": "Telangana",
+        "city": "Hyderabad",
+        "latitude": 17.3616,
+        "longitude": 78.4747,
+        
+        "package": {
+            "days": 3,
+            "cost": 10000
+        }
+    },
+    {
+        "name": "Lotus Temple",
+        "state": "Delhi",
+        "city": "Delhi",
+        "latitude": 28.5535,
+        "longitude": 77.2588,
+        "image": "https://source.unsplash.com/600x400/?lotustemple",
+        "package": {
+            "days": 2,
+            "cost": 7500
+        }
+    },
+    {
+        "name": "Golden Temple",
+        "state": "Punjab",
+        "city": "Amritsar",
+        "latitude": 31.6200,
+        "longitude": 74.8765,
+        "image": "https://source.unsplash.com/600x400/?goldentemple",
+        "package": {
+            "days": 4,
+            "cost": 14000
+        }
+    }
+
+
+]
